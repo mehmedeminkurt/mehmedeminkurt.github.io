@@ -6,7 +6,7 @@
   // ---- i18n (TR is in the markup, EN lives here)
   var EN={
     skip:'Skip to content',nav_project:'Project',nav_exp:'Experience',nav_edu:'Education',nav_contact:'Contact',
-    lead:'I build software that automates repetitive work. I currently keep a delivery platform running in production, and I interned on a SaaS team.',
+    lead:'I build software that automates repetitive work. I run a delivery platform in production, and during my internship I helped build a SaaS product that grew out of my own idea.',
     f1_t:'Studying',f1_d:'Istanbul University-Cerrahpaşa, Computer Programming. GPA 3.86 / 4.00',
     f2_t:'Latest internship',f2_d:'IWWOMI, Software Intern, July 2026',f3_t:'Live',
     cta_project:'See OtoGuard',cta_cv:'Download CV (PDF)',
@@ -21,9 +21,9 @@
     sp3_t:'Security',sp3_d:'bcrypt password hashing, JWT sessions, rate limiting, admin 2FA',
     sp4_t:'Testing',sp4_d:'End-to-end tests with Playwright',sp5_t:'Interface',sp5_d:'Turkish and English, public status page',
     h_exp:'Experience',e1_w:'July 2026 (1 month)',e1_r:'Software Intern (University Internship)',
-    e1_g:'I worked on the authorization and role-based access layer of a multi-tenant SaaS platform.',
+    e1_g:'I helped the team build the authorization and role-based access modules of a multi-tenant SaaS platform that grew out of my own idea.',
     e1_2:'Fixed open issues and implemented incoming PRs, contributing to the platform\u2019s API integration and stability.',
-    e1_3:'Followed the phases and task plans set by the team lead, working in a Git-based flow (issue tracking, PR review).',
+    e1_3:'Learned and applied a Git-based workflow (issue tracking, PR review), following the phases and task plans set by the team lead.',
     e2_w:'September 2024 \u2013 June 2025',e2_r:'Software Intern (High School Internship)',
     e2_g:'I automated certificate delivery and set up barcode and sensor tracking on a textile line.',
     e2_1:'Instead of sending certificates one by one to hundreds of training attendees, I built a program that generates personalised certificates and emails them automatically, cutting the manual workload significantly.',
