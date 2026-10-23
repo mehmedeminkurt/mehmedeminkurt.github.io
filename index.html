@@ -1,454 +1,214 @@
 <!doctype html>
 <html lang="tr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f7f7f4">
-    <meta name="description" content="Mehmed Emin Kurt'un özgeçmişi: yazılım stajları, eğitimi, otomasyon ve IoT çalışmaları.">
-    <meta property="og:title" content="Mehmed Emin Kurt — Yazılım Geliştirici">
-    <meta property="og:description" content="Yazılım geliştirme, süreç otomasyonu ve IoT ile ilgilenen Bilgisayar Programcılığı öğrencisi.">
-    <meta property="og:type" content="profile">
-    <title>Mehmed Emin Kurt — Yazılım Geliştirici</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        color-scheme: light;
-        --paper: #f7f7f4;
-        --ink: #17251f;
-        --muted: #65726b;
-        --line: #dce2dc;
-        --green: #245d45;
-        --lime: #d8f27a;
-        --white: #fff;
-        font-family: "DM Sans", sans-serif;
-        font-synthesis: none;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mehmed Emin Kurt – Yazılım geliştirme</title>
+<meta name="description" content="Mehmed Emin Kurt: Bilgisayar Programcılığı öğrencisi. Node.js ve TypeScript ile geliştirilen, canlıda çalışan OtoGuard teslimat platformu, IoT ve otomasyon projeleri.">
+<meta property="og:title" content="Mehmed Emin Kurt – Yazılım geliştirme">
+<meta property="og:description" content="Tekrar eden işleri otomatikleştiren yazılımlar. Canlıda çalışan proje: OtoGuard.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#e9ecef">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#icerik" data-i18n="skip">İçeriğe geç</a>
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-      body { min-width: 320px; margin: 0; color: var(--ink); background: var(--paper); }
-      a { color: inherit; }
-      .page { width: min(100% - 48px, 1120px); margin: 0 auto; }
-      .topbar {
-        position: sticky;
-        z-index: 2;
-        top: 0;
-        display: flex;
-        min-height: 76px;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid rgb(220 226 220 / 85%);
-        background: rgb(247 247 244 / 92%);
-        backdrop-filter: blur(12px);
-      }
-      .wordmark {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 18px;
-        font-weight: 700;
-        letter-spacing: -0.06em;
-        text-decoration: none;
-      }
-      .wordmark span { color: var(--green); }
-      .nav { display: flex; align-items: center; gap: 27px; }
-      .nav a {
-        color: var(--muted);
-        font-size: 13px;
-        font-weight: 500;
-        text-decoration: none;
-      }
-      .nav a:hover, .nav a:focus-visible { color: var(--green); }
-      .nav .nav-contact { color: var(--green); font-weight: 700; }
+<header class="top">
+  <a class="mark" href="#ust" aria-label="Mehmed Emin Kurt">MEK</a>
+  <nav aria-label="Ana menü">
+    <a href="#proje" data-i18n="nav_project">Proje</a>
+    <a href="#deneyim" data-i18n="nav_exp">Deneyim</a>
+    <a href="#egitim" data-i18n="nav_edu">Eğitim</a>
+    <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Dil / Language">
+    <span class="lang-pill" aria-hidden="true"></span>
+    <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
 
-      .hero {
-        display: grid;
-        min-height: 590px;
-        grid-template-columns: minmax(0, 1fr) 300px;
-        align-items: center;
-        gap: 72px;
-        padding: 74px 0 86px;
-      }
-      .eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin: 0 0 23px;
-        color: var(--green);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-      .eyebrow::before { width: 22px; height: 2px; background: var(--green); content: ""; }
-      h1, h2, h3, p { overflow-wrap: anywhere; }
-      h1 {
-        max-width: 700px;
-        margin: 0;
-        font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(56px, 8vw, 92px);
-        font-weight: 600;
-        letter-spacing: -0.075em;
-        line-height: 0.98;
-      }
-      h1 span { color: var(--green); }
-      .hero-copy {
-        max-width: 550px;
-        margin: 26px 0 0;
-        color: var(--muted);
-        font-size: 17px;
-        line-height: 1.8;
-      }
-      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-      .button {
-        display: inline-flex;
-        min-height: 49px;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 0 17px;
-        border: 1px solid var(--ink);
-        background: var(--ink);
-        color: var(--white);
-        font-size: 13px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
-      }
-      .button:hover, .button:focus-visible { border-color: var(--green); background: var(--green); }
-      .button svg, .text-link svg { width: 16px; height: 16px; }
-      .portrait { position: relative; width: 100%; max-width: 280px; justify-self: end; }
-      .portrait::after {
-        position: absolute;
-        z-index: -1;
-        right: -14px;
-        bottom: -14px;
-        width: 45%;
-        height: 45%;
-        background: var(--lime);
-        content: "";
-      }
-      .portrait-frame { aspect-ratio: 4 / 5; padding: 10px; border: 1px solid var(--line); background: var(--white); }
-      .portrait img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        background: #e8ece7;
-      }
-      .portrait-caption {
-        display: flex;
-        align-items: center;
-        gap: 9px;
-        margin-top: 22px;
-        color: var(--muted);
-        font-size: 12px;
-      }
-      .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #72a44b; }
+<main id="icerik">
+<section class="hero" id="ust">
+  <h1 aria-label="Mehmed Emin Kurt">
+    <span class="line" aria-hidden="true"><span>Mehmed</span></span>
+    <span class="line" aria-hidden="true"><span>Emin Kurt</span></span>
+  </h1>
+  <div class="hero-body">
+    <p class="lead" data-i18n="lead">Tekrar eden işleri otomatikleştiren yazılımlar geliştiriyorum. Şu an canlıda çalışan bir teslimat platformunu yayında tutuyorum; bir SaaS ekibinde staj yaptım.</p>
+    <dl class="facts">
+      <div><dt data-i18n="f1_t">Okuyor</dt><dd data-i18n="f1_d">İstanbul Üniversitesi-Cerrahpaşa, Bilgisayar Programcılığı. AGNO 3.86 / 4.00</dd></div>
+      <div><dt data-i18n="f2_t">Son staj</dt><dd data-i18n="f2_d">IWWOMI, Yazılım Stajyeri, Temmuz 2026</dd></div>
+      <div><dt data-i18n="f3_t">Yayında</dt><dd><a href="https://otoguard.tr" rel="noopener">otoguard.tr</a></dd></div>
+    </dl>
+    <p class="hero-links">
+      <a class="btn" href="#proje" data-i18n="cta_project">OtoGuard'ı incele</a>
+      <a class="tl" href="assets/Mehmed-Emin-Kurt-CV.pdf" download data-i18n="cta_cv">CV'yi indir (PDF)</a>
+      <a class="tl" href="https://github.com/mehmedeminkurt" rel="noopener">GitHub</a>
+    </p>
+  </div>
+</section>
 
-      .section { padding: 80px 0; border-top: 1px solid var(--line); }
-      .section-heading {
-        display: grid;
-        grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1.28fr);
-        align-items: start;
-        gap: 48px;
-        margin-bottom: 38px;
-      }
-      .section-label {
-        margin: 9px 0 0;
-        color: var(--green);
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-      h2 {
-        margin: 0;
-        font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(34px, 5vw, 48px);
-        font-weight: 600;
-        letter-spacing: -0.055em;
-        line-height: 1.1;
-      }
-      .section-intro { max-width: 650px; margin: 14px 0 0; color: var(--muted); line-height: 1.8; }
-      .timeline { display: grid; gap: 0; margin-left: calc(36% + 48px); }
-      .entry {
-        display: grid;
-        grid-template-columns: minmax(125px, 0.42fr) minmax(0, 1fr);
-        gap: 28px;
-        padding: 27px 0;
-        border-top: 1px solid var(--line);
-      }
-      .entry:first-child { border-top: 1px solid var(--line); }
-      .entry-date { margin: 3px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
-      .entry h3 { margin: 0; font-family: "Space Grotesk", sans-serif; font-size: 20px; letter-spacing: -0.035em; }
-      .entry-meta { margin: 5px 0 15px; color: var(--green); font-size: 13px; font-weight: 600; }
-      .entry ul { display: grid; gap: 9px; margin: 0; padding-left: 19px; color: var(--muted); font-size: 14px; line-height: 1.75; }
-      .entry li::marker { color: var(--green); }
-      .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-      .project-card {
-        min-height: 235px;
-        padding: 24px;
-        border: 1px solid var(--line);
-        background: rgb(255 255 255 / 54%);
-      }
-      .project-number { margin: 0 0 31px; color: var(--green); font-family: "Space Grotesk", sans-serif; font-size: 13px; font-weight: 700; }
-      .project-card h3 { margin: 0; font-family: "Space Grotesk", sans-serif; font-size: 19px; letter-spacing: -0.035em; }
-      .project-card p { margin: 11px 0 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
-      .skills-layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 80px; }
-      .skills-layout h2 { max-width: 410px; }
-      .skill-groups { display: grid; gap: 25px; }
-      .skill-group { padding-top: 18px; border-top: 1px solid var(--line); }
-      .skill-group h3 { margin: 0 0 12px; color: var(--muted); font-size: 12px; font-weight: 600; }
-      .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-      .tag { padding: 8px 11px; border: 1px solid var(--line); background: var(--white); font-size: 12px; }
-      .contact {
-        display: grid;
-        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-        align-items: center;
-        gap: 50px;
-        padding: 52px;
-        background: var(--ink);
-        color: var(--white);
-      }
-      .contact .section-label { color: var(--lime); }
-      .contact h2 { margin-top: 15px; }
-      .contact-copy { margin: 15px 0 0; color: #c2cbc5; font-size: 14px; line-height: 1.75; }
-      .contact-links { display: grid; }
-      .contact-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 18px 0;
-        border-bottom: 1px solid #3d4a43;
-        font-size: 14px;
-        text-decoration: none;
-      }
-      .contact-link:first-child { border-top: 1px solid #3d4a43; }
-      .contact-link span:first-child { color: #c2cbc5; }
-      .contact-link:hover span, .contact-link:focus-visible span { color: var(--lime); }
-      footer { display: flex; justify-content: space-between; gap: 16px; padding: 24px 0; color: var(--muted); font-size: 12px; }
-      footer a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
-
-      @media (max-width: 760px) {
-        .page { width: min(100% - 40px, 560px); }
-        .topbar { min-height: 68px; }
-        .nav { gap: 15px; }
-        .nav a { font-size: 12px; }
-        .nav a:nth-child(1), .nav a:nth-child(2) { display: none; }
-        .hero { min-height: auto; grid-template-columns: 1fr; gap: 48px; padding: 70px 0 64px; }
-        h1 { font-size: clamp(55px, 13vw, 80px); }
-        .hero-copy { font-size: 15px; }
-        .portrait { width: min(72%, 260px); justify-self: start; margin-left: 7px; }
-        .section { padding: 62px 0; }
-        .section-heading { grid-template-columns: 1fr; gap: 15px; margin-bottom: 28px; }
-        .section-label { margin-top: 0; }
-        .timeline { margin-left: 0; }
-        .entry { grid-template-columns: 1fr; gap: 10px; }
-        .entry-date { margin: 0; }
-        .project-grid { grid-template-columns: 1fr; }
-        .project-card { min-height: auto; }
-        .project-number { margin-bottom: 20px; }
-        .skills-layout, .contact { grid-template-columns: 1fr; gap: 32px; }
-        .contact { padding: 30px 23px; }
-      }
-      @media (max-width: 390px) {
-        .page { width: min(100% - 32px, 560px); }
-        .nav { gap: 11px; }
-        .nav a { font-size: 11px; }
-        .hero-actions .button { flex: 1 1 auto; padding: 0 12px; font-size: 12px; }
-        footer { flex-direction: column; }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <header class="topbar">
-        <a class="wordmark" href="#ana-sayfa" aria-label="Mehmed Emin Kurt, ana sayfa">MEK<span>.</span></a>
-        <nav class="nav" aria-label="Ana menü">
-          <a href="#deneyim">Deneyim</a>
-          <a href="#calismalar">Çalışmalar</a>
-          <a href="#egitim">Eğitim</a>
-          <a href="#yetkinlikler">Yetkinlikler</a>
-          <a class="nav-contact" href="#iletisim">İletişim ↗</a>
-        </nav>
-      </header>
-
-      <main id="ana-sayfa">
-        <section class="hero" aria-labelledby="name">
-          <div>
-            <p class="eyebrow">Bilgisayar Programcılığı Öğrencisi</p>
-            <h1 id="name">Mehmed Emin <span>Kurt.</span></h1>
-            <p class="hero-copy">Yazılım geliştirme ve IoT alanlarına ilgi duyuyorum. Günlük işleri kolaylaştıran araçlar ve tekrarlayan süreçleri otomatikleştiren çözümler geliştiriyorum.</p>
-            <div class="hero-actions">
-              <a class="button" href="mailto:mehmedeminkurt9@gmail.com">
-                Benimle iletişime geç
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-          <aside class="portrait" aria-label="Profil fotoğrafı">
-            <div class="portrait-frame">
-              <img src="https://github.com/mehmedeminkurt.png" alt="Mehmed Emin Kurt'un profil fotoğrafı" width="560" height="700">
-            </div>
-            <div class="portrait-caption"><span class="status-dot" aria-hidden="true"></span> İstanbul, Arnavutköy</div>
-          </aside>
-        </section>
-
-        <section class="section" id="deneyim" aria-labelledby="experience-title">
-          <div class="section-heading">
-            <p class="section-label">01 / Deneyim</p>
-            <div>
-              <h2 id="experience-title">Öğrenirken üretiyorum.</h2>
-              <p class="section-intro">Stajlarımda yazılım geliştirme, otomasyon ve ekip içi çalışma süreçlerinde deneyim kazandım.</p>
-            </div>
-          </div>
-          <div class="timeline">
-            <article class="entry">
-              <p class="entry-date">Temmuz 2026<br>1 ay</p>
-              <div>
-                <h3>IWWOMI</h3>
-                <p class="entry-meta">Yazılım Stajyeri · Üniversite stajı</p>
-                <ul>
-                  <li>Multi-tenant SaaS platformunun yetkilendirme ve rol tabanlı erişim kontrolü modüllerinin geliştirilmesinde görev aldım.</li>
-                  <li>Issue çözümleri ve PR çalışmalarıyla API entegrasyonu ve sistem kararlılığı süreçlerine katkı sağladım.</li>
-                  <li>Git tabanlı issue takibi ve PR inceleme akışlarında ekip ile çalıştım.</li>
-                </ul>
-              </div>
-            </article>
-            <article class="entry">
-              <p class="entry-date">Eylül 2024 —<br>Haziran 2025</p>
-              <div>
-                <h3>İHKİB Dijital Dönüşüm Merkezi</h3>
-                <p class="entry-meta">Yazılım Stajyeri · Lise stajı</p>
-                <ul>
-                  <li>Eğitim katılımcıları için kişiye özel sertifika oluşturan ve e-posta ile gönderen bir otomasyon programı geliştirdim.</li>
-                  <li>Node-RED ile tekstil üretim hattındaki ürünlerin durumunu anlık izleyen barkod tabanlı takip sistemi geliştirdim.</li>
-                  <li>ESP32 ve sensörlerle üretim hattındaki ürün sayısını takip eden veri toplama prototipi tasarlayıp uyguladım.</li>
-                  <li>Mevcut kodların düzenlenmesi, hata ayıklama ve ihtiyaçlara göre geliştirilmesi çalışmalarına katıldım.</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="calismalar" aria-labelledby="work-title">
-          <div class="section-heading">
-            <p class="section-label">02 / Çalışmalar</p>
-            <div>
-              <h2 id="work-title">İş akışlarını kolaylaştıran çözümler.</h2>
-              <p class="section-intro">Staj deneyimlerimde geliştirdiğim otomasyon ve IoT odaklı çalışmalar.</p>
-            </div>
-          </div>
-          <div class="project-grid">
-            <article class="project-card">
-              <p class="project-number">01 — OTOMASYON</p>
-              <h3>Sertifika ve e-posta otomasyonu</h3>
-              <p>Katılımcı bilgilerine göre kişiye özel sertifikalar hazırlayıp otomatik e-posta ile ileterek manuel işlemleri azalttım.</p>
-            </article>
-            <article class="project-card">
-              <p class="project-number">02 — ÜRETİM TAKİBİ</p>
-              <h3>Barkod tabanlı takip sistemi</h3>
-              <p>Node-RED ile tekstil hattındaki ürünlerin üretim ve depo durumunu gerçek zamanlı izleyen bir sistem geliştirdim.</p>
-            </article>
-            <article class="project-card">
-              <p class="project-number">03 — IoT / ESP32</p>
-              <h3>Ürün sayım prototipi</h3>
-              <p>Sensör ve ESP32 entegrasyonuyla üretim hattındaki ürün sayısını otomatik takip eden bir veri toplama prototipi tasarladım.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="egitim" aria-labelledby="education-title">
-          <div class="section-heading">
-            <p class="section-label">03 / Eğitim</p>
-            <div>
-              <h2 id="education-title">Sağlam bir temel, sürekli gelişim.</h2>
-            </div>
-          </div>
-          <div class="timeline">
-            <article class="entry">
-              <p class="entry-date">2025 — Devam ediyor</p>
-              <div>
-                <h3>İstanbul Üniversitesi-Cerrahpaşa</h3>
-                <p class="entry-meta">Bilgisayar Programcılığı · Ön lisans</p>
-                <ul><li>Genel not ortalaması: 3,86 / 4,00</li></ul>
-              </div>
-            </article>
-            <article class="entry">
-              <p class="entry-date">2021 — 2025</p>
-              <div>
-                <h3>Arnavutköy Mesleki ve Teknik Anadolu Lisesi</h3>
-                <p class="entry-meta">Bilişim Teknolojileri · Yazılım Geliştirme</p>
-                <ul>
-                  <li>Diploma notu: 92,43 · Okul birincisi</li>
-                  <li>Gönüllü sistem ve donanım sorumlusu olarak bilgisayar laboratuvarının kurulum ve bakım çalışmalarına ekip halinde liderlik ettim.</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="yetkinlikler" aria-labelledby="skills-title">
-          <div class="skills-layout">
-            <div>
-              <p class="section-label">04 / Yetkinlikler</p>
-              <h2 id="skills-title">Kullandığım araçlar ve teknolojiler.</h2>
-            </div>
-            <div class="skill-groups">
-              <div class="skill-group">
-                <h3>Programlama ve veritabanı</h3>
-                <div class="tags">
-                  <span class="tag">Python</span><span class="tag">Node.js</span><span class="tag">C / C++</span>
-                  <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">SQLite</span>
-                </div>
-              </div>
-              <div class="skill-group">
-                <h3>IoT ve geliştirme araçları</h3>
-                <div class="tags">
-                  <span class="tag">Node-RED</span><span class="tag">ESP32</span><span class="tag">MQTT</span>
-                  <span class="tag">Arduino</span><span class="tag">REST API</span><span class="tag">Git / GitHub</span>
-                </div>
-              </div>
-              <div class="skill-group">
-                <h3>Diğer</h3>
-                <div class="tags"><span class="tag">Görüntü işleme · temel</span><span class="tag">İngilizce · B1</span></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="iletisim" aria-labelledby="contact-title">
-          <div class="contact">
-            <div>
-              <p class="section-label">05 / İletişim</p>
-              <h2 id="contact-title">Birlikte çalışalım.</h2>
-              <p class="contact-copy">Fırsatlar, projeler veya tanışmak için bana ulaşabilirsiniz.</p>
-            </div>
-            <div class="contact-links">
-              <a class="contact-link" href="mailto:mehmedeminkurt9@gmail.com"><span>E-posta</span><span>mehmedeminkurt9@gmail.com ↗</span></a>
-              <a class="contact-link" href="tel:+905526156842"><span>Telefon</span><span>+90 552 615 68 42 ↗</span></a>
-              <a class="contact-link" href="https://www.linkedin.com/in/mehmedeminkurt" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span>Profilimi görüntüle ↗</span></a>
-              <a class="contact-link" href="https://github.com/mehmedeminkurt" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span>Projelerime göz at ↗</span></a>
-            </div>
-          </div>
-        </section>
-
-        <footer>
-          <span>© <span id="year">2026</span> Mehmed Emin Kurt</span>
-          <a href="#ana-sayfa">Başa dön ↑</a>
-        </footer>
-      </main>
+<section class="project" id="proje">
+  <div class="wrap">
+    <div class="project-head">
+      <h2>OtoGuard</h2>
+      <div>
+        <p class="lead" data-i18n="p_lead">Dijital hesap satan mağazalar için teslimat otomasyonu. Alıcı siparişle gelen anahtarı yapıştırır; giriş bilgileri ve doğrulama kodu birkaç saniye içinde ekranda olur, mağaza sahibinin araya girmesi gerekmez.</p>
+        <p class="note"><a href="https://otoguard.tr" rel="noopener" data-i18n="p_open">otoguard.tr'yi aç</a> <span data-i18n="p_private">Kaynak kod özel depoda; istenirse birlikte inceleyebiliriz.</span></p>
+      </div>
     </div>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+
+    <div class="story" id="hikaye">
+      <ol class="steps">
+        <li class="step is-active" data-i="0">
+          <span class="step-n" aria-hidden="true">1</span>
+          <h3 data-i18n="s1_t">Anahtarı yapıştır</h3>
+          <p data-i18n="s1_d">Alıcı, mağazanın vitrinine anahtarı girer. Sistem anahtarı doğrular ve deneme sayısını sınırlar.</p>
+          <figure class="step-fig"><img src="assets/vitrin.webp" width="1252" height="910" loading="lazy" alt="Mağaza vitrini: teslimat kodunu yapıştırma alanı" data-i18n-alt="s1_a"></figure>
+        </li>
+        <li class="step" data-i="1">
+          <span class="step-n" aria-hidden="true">2</span>
+          <h3 data-i18n="s2_t">Hesap kütüphaneye eklenir</h3>
+          <p data-i18n="s2_d">Doğrulanan anahtar alıcının hesabına tanımlanır. Satın aldıkları platforma göre gruplanmış bir kütüphanede listelenir.</p>
+          <figure class="step-fig"><img src="assets/hesaplarim.webp" width="1267" height="486" loading="lazy" alt="Hesaplarım sayfası: platforma göre gruplanmış hesap listesi" data-i18n-alt="s2_a"></figure>
+        </li>
+        <li class="step" data-i="2">
+          <span class="step-n" aria-hidden="true">3</span>
+          <h3 data-i18n="s3_t">Bilgiler ve kod gelir</h3>
+          <p data-i18n="s3_d">Kullanıcı adı, şifre ve Steam Guard kodu tek ekranda. Kod isteği kuyruğa alınır, ayrı bir worker kodu e-postadan çeker.</p>
+          <figure class="step-fig"><img src="assets/detay.webp" width="500" height="543" loading="lazy" alt="Teslimat detayı: kullanıcı adı, şifre ve kod alma düğmesi" data-i18n-alt="s3_a"></figure>
+        </li>
+      </ol>
+      <div class="stage-col">
+        <div class="stage" aria-hidden="true">
+          <img class="shot is-active" src="assets/vitrin.webp" width="1252" height="910" alt="">
+          <img class="shot" src="assets/hesaplarim.webp" width="1267" height="486" alt="">
+          <img class="shot" src="assets/detay.webp" width="500" height="543" alt="">
+        </div>
+        <p class="caption" data-i18n="caption">Ekran görüntülerindeki mağaza, hesap ve oyun verileri demo ile değiştirildi.</p>
+      </div>
+    </div>
+
+    <div class="owner">
+      <div class="owner-text">
+        <h3 data-i18n="o_t">Mağaza sahibi tarafı</h3>
+        <p data-i18n="o_d">Her mağazanın kendi paneli var: abonelik süresi, hesap limiti, key ve müşteri sayıları tek bakışta. Platformlar, paketler, keyler, müşteriler ve loglar ayrı sayfalarda yönetilir.</p>
+      </div>
+      <figure class="frame"><img src="assets/panel.webp" width="1245" height="484" loading="lazy" alt="Mağaza yönetim paneli: abonelik süresi, hesap limiti, key ve müşteri sayıları" data-i18n-alt="o_a"></figure>
+    </div>
+
+    <div class="tech">
+      <h3 data-i18n="t_t">Nasıl çalışıyor</h3>
+      <ol class="flow" aria-label="Akış">
+        <li data-i18n="fl1">İstek</li>
+        <li data-i18n="fl2">Express API</li>
+        <li data-i18n="fl3">Redis kuyruğu</li>
+        <li data-i18n="fl4">Worker</li>
+        <li data-i18n="fl5">E-posta (IMAP) ve Microsoft OAuth</li>
+      </ol>
+      <dl class="spec">
+        <div><dt data-i18n="sp1_t">Yığın</dt><dd>Node.js, TypeScript, Express, Prisma ORM, Redis</dd></div>
+        <div><dt data-i18n="sp2_t">Çok mağazalı yapı</dt><dd data-i18n="sp2_d">Davet kodlu kayıt, abonelik durumuna bağlı erişim, mağaza başına yönetim paneli</dd></div>
+        <div><dt data-i18n="sp3_t">Güvenlik</dt><dd data-i18n="sp3_d">bcrypt ile parola saklama, JWT oturumları, rate limiting, yönetici 2FA</dd></div>
+        <div><dt data-i18n="sp4_t">Test</dt><dd data-i18n="sp4_d">Playwright ile uçtan uca testler</dd></div>
+        <div><dt data-i18n="sp5_t">Arayüz</dt><dd data-i18n="sp5_d">Türkçe ve İngilizce, herkese açık durum sayfası</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="deneyim">
+  <div class="wrap side">
+    <h2 data-i18n="h_exp">Deneyim</h2>
+    <div class="entries">
+      <article class="entry">
+        <p class="when" data-i18n="e1_w">Temmuz 2026 (1 ay)</p>
+        <div>
+          <h3><a href="https://iwwomi.com/tr/" rel="noopener">IWWOMI</a>, <span data-i18n="e1_r">Yazılım Stajyeri (Üniversite Stajı)</span></h3>
+          <ul>
+            <li data-i18n="e1_1">Ekip liderinin belirlediği fazlar ve görev planları doğrultusunda, multi-tenant SaaS platformunun yetkilendirme ve rol tabanlı erişim kontrolü modüllerinin geliştirilmesinde görev aldım.</li>
+            <li data-i18n="e1_2">Açılan issue'ları çözerek ve gelen PR'ları uygulayarak platformun API entegrasyonu ve sistem kararlılığı süreçlerine katkı sağladım.</li>
+            <li data-i18n="e1_3">Git tabanlı bir iş akışında (issue tracking, PR review) çalışarak ekip içi geliştirme sürecine adapte oldum.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="entry">
+        <p class="when" data-i18n="e2_w">Eylül 2024 – Haziran 2025</p>
+        <div>
+          <h3><a href="https://www.ddmturkiye.org/" rel="noopener">İHKİB Dijital Dönüşüm Merkezi</a>, <span data-i18n="e2_r">Yazılım Stajyeri (Lise Stajı)</span></h3>
+          <ul>
+            <li data-i18n="e2_1">Eğitimlere katılan yüzlerce kişiye tek tek sertifika göndermek yerine, isimlere özel sertifika oluşturan ve otomatik e-posta gönderen bir program geliştirdim; manuel iş yükü önemli ölçüde azaldı.</li>
+            <li data-i18n="e2_2">Node-RED ile barkod tabanlı bir üretim takip sistemi geliştirdim; tekstil hattındaki ürünlerin depo ve üretim durumu gerçek zamanlı izlenebildi.</li>
+            <li data-i18n="e2_3">ESP32 ve sensör entegrasyonuyla, üretim hattındaki ürün sayısını otomatik izleyen bir prototip veri toplama sistemi tasarladım ve uyguladım.</li>
+            <li data-i18n="e2_4">Mevcut kodları düzenleme, hata ayıklama ve ihtiyaçlara göre geliştirme süreçlerinde aktif görev aldım.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="egitim">
+  <div class="wrap side">
+    <h2 data-i18n="h_edu">Eğitim</h2>
+    <div class="entries">
+      <article class="entry">
+        <p class="when" data-i18n="d1_w">2025 – devam ediyor</p>
+        <div>
+          <h3 data-i18n="d1_t">İstanbul Üniversitesi-Cerrahpaşa</h3>
+          <p class="sub" data-i18n="d1_d">Bilgisayar Programcılığı (Ön Lisans). AGNO 3.86 / 4.00</p>
+        </div>
+      </article>
+      <article class="entry">
+        <p class="when">2021 – 2025</p>
+        <div>
+          <h3 data-i18n="d2_t">Arnavutköy Mesleki ve Teknik Anadolu Lisesi</h3>
+          <p class="sub" data-i18n="d2_d">Bilişim Teknolojileri, Yazılım Geliştirme. Diploma notu 92,43; okul birincisi olarak mezun oldum.</p>
+          <p class="sub" data-i18n="d2_e">Gönüllü sistem ve donanım sorumlusu olarak okul bilgisayar laboratuvarının kurulum ve bakım süreçlerinde ekibe liderlik ettim.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="beceriler">
+  <div class="wrap side">
+    <h2 data-i18n="h_skills">Beceriler</h2>
+    <dl class="skills">
+      <div><dt data-i18n="k1_t">Backend</dt><dd>Node.js, TypeScript, Express, Prisma, Redis, REST API</dd></div>
+      <div><dt data-i18n="k2_t">Veritabanı</dt><dd>PostgreSQL, MySQL, SQLite</dd></div>
+      <div><dt>IoT</dt><dd>ESP32, Arduino C/C++, MQTT, Node-RED</dd></div>
+      <div><dt data-i18n="k4_t">Diğer</dt><dd data-i18n="k4_d">Python, Git ve GitHub, görüntü işleme (Augelab, temel), İngilizce (B1)</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="block contact" id="iletisim">
+  <div class="wrap side">
+    <h2 data-i18n="h_contact">İletişim</h2>
+    <div>
+      <p class="mail"><a href="mailto:mehmedeminkurt9@gmail.com">mehmedeminkurt9@gmail.com</a></p>
+      <ul class="links">
+        <li><a href="https://www.linkedin.com/in/mehmedeminkurt/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/mehmedeminkurt" rel="noopener">GitHub</a></li>
+        <li><a href="assets/Mehmed-Emin-Kurt-CV.pdf" download data-i18n="cta_cv">CV'yi indir (PDF)</a></li>
+      </ul>
+      <p class="sub" data-i18n="c_note">İstanbul, Arnavutköy. Referanslar talep üzerine paylaşılır.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 Mehmed Emin Kurt</p>
+    <p data-i18n="foot">Bu site düz HTML, CSS ve JavaScript ile yazıldı.</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
 </html>
