@@ -102,9 +102,12 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(3.6rem,13vw,11.5re
 .dark{background:var(--ink);color:#e6e9ed}
 .dark ::selection{background:#19c28a;color:#06140f}
 .skills{display:grid;border-top:1px solid #2a323c}
-.skills>div{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,7fr);gap:clamp(12px,3vw,40px);padding:clamp(22px,3vw,34px) 0;border-bottom:1px solid #2a323c;align-items:baseline}
+.skills>div{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,7fr);gap:clamp(12px,3vw,40px);padding:clamp(22px,3vw,34px) 0;border-bottom:1px solid #2a323c;align-items:start}
 .skills dt{font-family:var(--display);font-weight:600;font-size:1rem;color:#19c28a}
-.skills dd{display:flex;flex-wrap:wrap;gap:6px clamp(18px,2.6vw,36px);font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3.2vw,2.7rem);line-height:1.15;letter-spacing:-.03em}
+.skills dd ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:16px 24px}
+.skills li{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,1.9vw,1.45rem);letter-spacing:-.02em;line-height:1.2}
+.skills .wide{grid-column:span 2}
+.skills .ic{width:24px;height:24px;flex:none;color:#7f8b9a}
 
 .contact{background:var(--accent);color:#f2f6f4;padding-bottom:clamp(88px,12vw,170px)}
 .contact ::selection{background:#06140f;color:#e9ecef}
@@ -115,6 +118,8 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(3.6rem,13vw,11.5re
 .mail a:hover{background-size:0 3px;background-position:100% 100%}
 .links{display:flex;flex-wrap:wrap;gap:12px 32px;margin:30px 0 22px;font-family:var(--display);font-weight:500;font-size:1.15rem}
 .contact .sub{color:#c6dad2}
+.place{display:flex;align-items:center;gap:8px;margin-top:0}
+.place .ic{width:18px;height:18px;flex:none}
 .foot{background:var(--ink);padding:22px 0 40px;font-size:.95rem;color:#8b95a3}
 .foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 
@@ -128,6 +133,8 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(3.6rem,13vw,11.5re
   .step{min-height:0;opacity:1;padding:0 0 56px}
   .step-fig{display:block;margin-top:20px;background:#000;border:1px solid #232a33;border-radius:12px;overflow:hidden}
   .spec{grid-template-columns:1fr}
+  .skills dd ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .skills .wide{grid-column:1/-1}
   .flow{flex-direction:column}
   .flow li{padding:10px 0 10px 0;margin:0}
   .flow li::after,.flow li::before{display:none}

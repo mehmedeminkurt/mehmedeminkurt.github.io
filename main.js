@@ -6,9 +6,9 @@
   // ---- i18n (TR is in the markup, EN lives here)
   var EN={
     skip:'Skip to content',nav_project:'Project',nav_exp:'Experience',nav_edu:'Education',nav_contact:'Contact',
-    lead:'I build software that automates repetitive work. I run a delivery platform in production, and I keep growing in backend and IoT.',
+    lead:'I build software that automates repetitive work. A delivery platform I wrote in Node.js and TypeScript is running in production.',
     f1_t:'Studying',f1_d:'Istanbul University-Cerrahpaşa, Computer Programming. GPA 3.86 / 4.00',
-    f2_t:'Latest internship',f2_d:'IWWOMI, Software Intern, July 2026',f3_t:'Live',
+    f2_t:'Technologies',f3_t:'Live',
     cta_project:'See OtoGuard',cta_cv:'Download CV (PDF)',
     p_lead:'Key-based delivery automation for stores that sell digital products. The buyer pastes the key that came with the order; the system validates it and delivers the details and a one-time verification code within seconds.',
     p_open:'Open otoguard.tr',p_private:'The source is in a private repository; happy to walk through it on request.',
@@ -33,9 +33,8 @@
     h_edu:'Education',d1_w:'2025 \u2013 ongoing',d1_t:'Istanbul University-Cerrahpaşa',d1_r:'Computer Programming (Associate degree)',d1_g:'My GPA is 3.86 / 4.00.',
     d2_t:'Arnavutköy Vocational and Technical Anatolian High School',d2_r:'Information Technologies, Software Development',d2_g:'I graduated first in my school. Diploma grade 92.43.',
     d2_e:'As a volunteer systems and hardware lead, I led the team that set up and maintained the school\u2019s computer lab.',
-    h_skills:'Skills',k1_t:'Backend',k2_t:'Databases',k4_t:'Other',k4b:'Git and GitHub',k4c:'Image processing (basic)',k4d:'English (B1)',
-    h_contact:'Contact',c_note:'Istanbul, Arnavutköy. References available on request.',
-    foot:'Built with plain HTML, CSS and JavaScript.'
+    h_skills:'Skills',k1_t:'Backend',k2_t:'Databases',k4_t:'Other',k4c:'Image processing (basic)',k4d:'English (B1)',
+    h_contact:'Contact',c_loc:'Istanbul',c_note:'References available on request.'
   };
   var TR={},nodes=[].slice.call(document.querySelectorAll('[data-i18n]')),alts=[].slice.call(document.querySelectorAll('[data-i18n-alt]'));
   nodes.forEach(function(n){TR[n.getAttribute('data-i18n')]=n.innerHTML});
