@@ -6,7 +6,7 @@
   // ---- i18n (TR is in the markup, EN lives here)
   var EN={
     skip:'Skip to content',nav_project:'Project',nav_exp:'Experience',nav_edu:'Education',nav_contact:'Contact',
-    lead:'I build software that automates repetitive work. I run a delivery platform in production, and during my internship I helped build a SaaS product that grew out of my own idea.',
+    lead:'I build software that automates repetitive work. I run a delivery platform in production, and I keep growing in backend and IoT.',
     f1_t:'Studying',f1_d:'Istanbul University-Cerrahpaşa, Computer Programming. GPA 3.86 / 4.00',
     f2_t:'Latest internship',f2_d:'IWWOMI, Software Intern, July 2026',f3_t:'Live',
     cta_project:'See OtoGuard',cta_cv:'Download CV (PDF)',
