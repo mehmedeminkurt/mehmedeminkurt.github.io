@@ -275,3 +275,31 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(3.6rem,13vw,11.5re
   .evs{min-height:0}
   .w-body{min-height:0}
 }
+
+/* ---------- timeline ---------- */
+.tl{--dw:150px;--gap:clamp(40px,6vw,72px);display:grid;gap:var(--gap);min-width:0}
+.tl-item{position:relative;display:grid;grid-template-columns:var(--dw) 46px minmax(0,1fr);gap:0 clamp(16px,2.4vw,28px);align-items:start}
+.tl-item:not(:last-child)::after{content:"";position:absolute;left:calc(var(--dw) + clamp(16px,2.4vw,28px) + 22.5px);top:52px;bottom:calc(var(--gap) * -1 + 6px);width:1px;background:var(--line)}
+.tl-date{grid-area:auto;font-family:var(--display);font-weight:600;font-size:1.02rem;color:var(--ink);padding-top:11px;line-height:1.3}
+.node{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;background:var(--paper);position:relative;z-index:1}
+.nic{width:20px;height:20px}
+.tl-item.edu .node{background:var(--ink);color:var(--paper)}
+.tl-body h3{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1.05;letter-spacing:-.03em;padding-top:5px}
+.tl-item.edu h3{font-size:clamp(1.3rem,2vw,1.6rem)}
+.tl-body h3 a{text-decoration:none;background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 2px no-repeat;padding-bottom:.06em;transition:background-size .3s var(--ease)}
+.tl-body h3 a:hover{background-size:100% 2px}
+.tl-body .role{font-family:var(--display);font-weight:500;color:var(--muted);font-size:1.05rem;margin-top:6px}
+.tl-body ul{margin-top:16px}
+.tl-body li{position:relative;padding-left:1.1em;margin-top:9px;max-width:64ch;color:#2d3540;font-size:1.06rem;line-height:1.55}
+.tl-body li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:1px;background:var(--ink)}
+.facts dt{display:flex;align-items:center;gap:8px}
+.facts .ic{width:16px;height:16px;flex:none}
+.links a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;padding-bottom:2px;transition:background-size .3s var(--ease)}
+.links a:hover{background-size:0 1px;background-position:100% 100%}
+.links .ic{width:18px;height:18px;flex:none}
+@media (max-width:900px){
+  .tl-item{grid-template-columns:46px minmax(0,1fr);grid-template-areas:"node date" "node body"}
+  .tl-item .node{grid-area:node}.tl-item .tl-date{grid-area:date;padding-top:0;align-self:center}.tl-item .tl-body{grid-area:body}
+  .tl-item:not(:last-child)::after{left:22.5px;top:52px}
+  .tl-item{column-gap:18px;row-gap:6px}
+}
