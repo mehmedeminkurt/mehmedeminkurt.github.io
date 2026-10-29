@@ -41,7 +41,7 @@
     <p class="lead" data-i18n="lead">Tekrar eden işleri otomatikleştiren yazılımlar geliştiriyorum. Node.js ve TypeScript ile yazdığım bir teslimat platformu canlıda çalışıyor.</p>
     <dl class="facts">
       <div><dt data-i18n="f1_t">Okuyor</dt><dd data-i18n="f1_d">İstanbul Üniversitesi-Cerrahpaşa, Bilgisayar Programcılığı. AGNO 3.86 / 4.00</dd></div>
-      <div><dt data-i18n="f2_t">Teknolojiler</dt><dd>Node.js, TypeScript, Express, Prisma, Redis</dd></div>
+      <div><dt data-i18n="f2_t">Teknolojiler</dt><dd>Node.js, TypeScript, Python, Express, Prisma, Redis</dd></div>
       <div><dt data-i18n="f3_t">Yayında</dt><dd><a href="https://otoguard.tr" rel="noopener">otoguard.tr</a></dd></div>
     </dl>
     <p class="hero-links">
@@ -62,34 +62,53 @@
       </div>
     </div>
 
-    <div class="story" id="hikaye">
-      <ol class="steps">
-        <li class="step is-active" data-i="0">
-          <span class="step-n" aria-hidden="true">1</span>
-          <h3 data-i18n="s1_t">Anahtarı yapıştır</h3>
-          <p data-i18n="s1_d">Alıcı, mağazanın vitrinine anahtarı girer. Sistem anahtarı doğrular ve deneme sayısını sınırlar.</p>
-          <figure class="step-fig"><img src="assets/vitrin.webp" width="1252" height="910" loading="lazy" alt="Mağaza vitrini: teslimat anahtarını yapıştırma alanı" data-i18n-alt="s1_a"></figure>
-        </li>
-        <li class="step" data-i="1">
-          <span class="step-n" aria-hidden="true">2</span>
-          <h3 data-i18n="s2_t">Ürün kütüphaneye eklenir</h3>
-          <p data-i18n="s2_d">Doğrulanan anahtar alıcının hesabına tanımlanır. Satın alınanlar platforma göre gruplanmış bir kütüphanede listelenir.</p>
-          <figure class="step-fig"><img src="assets/hesaplarim.webp" width="1267" height="486" loading="lazy" alt="Hesaplarım sayfası: platforma göre gruplanmış hesap listesi" data-i18n-alt="s2_a"></figure>
-        </li>
-        <li class="step" data-i="2">
-          <span class="step-n" aria-hidden="true">3</span>
-          <h3 data-i18n="s3_t">Bilgiler ve kod gelir</h3>
-          <p data-i18n="s3_d">Teslimat bilgileri ve doğrulama kodu tek ekranda. Kod isteği kuyruğa alınır, ayrı bir worker kodu e-postadan çeker.</p>
-          <figure class="step-fig"><img src="assets/detay.webp" width="500" height="543" loading="lazy" alt="Teslimat detayı: bilgiler ve doğrulama kodu alma düğmesi" data-i18n-alt="s3_a"></figure>
-        </li>
-      </ol>
-      <div class="stage-col">
-        <div class="stage" aria-hidden="true">
-          <img class="shot is-active" src="assets/vitrin.webp" width="1252" height="910" alt="">
-          <img class="shot" src="assets/hesaplarim.webp" width="1267" height="486" alt="">
-          <img class="shot" src="assets/detay.webp" width="500" height="543" alt="">
+    <div class="lab" id="deneme">
+      <div class="lab-head">
+        <h3 data-i18n="d_h">Dene: anahtarı yapıştır, kod gelsin</h3>
+        <p data-i18n="d_note">Bu bir simülasyon: adımlar gerçek akışın sırasıyla aynı, veriler sahte.</p>
+      </div>
+      <div class="demo" id="demo-delivery">
+        <div class="win">
+          <div class="win-bar"><span data-i18n="cust_label">Müşteri ekranı</span></div>
+          <div class="cust-body" aria-live="polite"></div>
+        </div>
+        <div class="win">
+          <div class="win-bar"><span data-i18n="trace_label">Sunucu günlüğü</span></div>
+          <div class="trace-body" role="log" aria-label="Sunucu günlüğü"></div>
         </div>
       </div>
+    </div>
+
+    <div class="under">
+      <h3 data-i18n="u_h">Altında neler var</h3>
+      <p data-i18n="u_p">Bu akışı sağlam tutan üç parçayı da burada deneyebilirsin.</p>
+    </div>
+
+    <div class="scene">
+      <div class="scene-text">
+        <h4 data-i18n="sc1_t">Anahtarlar tahmin edilemesin</h4>
+        <p data-i18n="sc1_p">Anahtarlar 96 bit rastgelelikte üretiliyor, ama botlar yine de deneyebilir. Tek bir IP 10 dakikada en fazla 5 farklı anahtar deneyebilir; aynı anahtarın da ayrı bir sınırı var.</p>
+        <p class="file">src/middlewares/rateLimit.middleware.ts</p>
+      </div>
+      <div class="win widget" id="w-limit"><div class="win-bar"><span data-i18n="w1_label">Saldırgan simülatörü</span></div><div class="w-body"></div></div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-text">
+        <h4 data-i18n="sc2_t">İki iş aynı anda gelirse</h4>
+        <p data-i18n="sc2_p">Microsoft her yenilemede refresh token'ı değiştirir. İki iş eski token'la aynı anda giderse ikincisi reddedilir ve hesabın bağlantısı bozulur. Worker, aynı hesap için süren yenilemeyi tek bir promise olarak paylaştırıyor.</p>
+        <p class="file">src/worker.ts</p>
+      </div>
+      <div class="win widget" id="w-race"><div class="win-bar"><span data-i18n="w2_label">Token yenileme yarışı</span></div><div class="w-body"></div></div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-text">
+        <h4 data-i18n="sc3_t">Filtreyi unutmak mümkün olmasın</h4>
+        <p data-i18n="sc3_p">Her sorguya store_id koşulunu elle yazmak yerine Prisma Client Extension bunu otomatik ekliyor. Bir mağaza diğerinin verisini göremiyor.</p>
+        <p class="file">src/lib/prisma.ts</p>
+      </div>
+      <div class="win widget" id="w-tenant"><div class="win-bar"><span data-i18n="w3_label">Mağaza izolasyonu</span></div><div class="w-body"></div></div>
     </div>
 
     <div class="owner">
@@ -100,21 +119,45 @@
       <figure class="frame"><img src="assets/panel.webp" width="1245" height="484" loading="lazy" alt="Mağaza yönetim paneli: abonelik süresi, ürün limiti, key ve müşteri sayıları" data-i18n-alt="o_a"></figure>
     </div>
 
+    <div class="facts2">
+      <div class="ledger">
+        <h3 data-i18n="n_h">Sayılarla</h3>
+        <dl>
+          <div><dt data-i18n="n1_k">TypeScript</dt><dd data-i18n="n1_v">40.520 satır, 202 dosya</dd></div>
+          <div><dt data-i18n="n2_k">Arayüz şablonları</dt><dd data-i18n="n2_v">22.228 satır, 56 dosya (EJS)</dd></div>
+          <div><dt data-i18n="n3_k">API</dt><dd data-i18n="n3_v">205 endpoint, 17 rota dosyası</dd></div>
+          <div><dt data-i18n="n4_k">Veri</dt><dd data-i18n="n4_v">17 model, 15 migration</dd></div>
+          <div><dt data-i18n="n5_k">Test</dt><dd data-i18n="n5_v">301 Playwright E2E senaryosu, 49 dosya</dd></div>
+          <div><dt data-i18n="n6_k">Geçmiş</dt><dd data-i18n="n6_v">161 commit, 96 gün, tek geliştirici</dd></div>
+        </dl>
+      </div>
+      <div class="limits">
+        <h3 data-i18n="l_h">Henüz yapmadıklarım</h3>
+        <ul>
+          <li data-i18n="l1">SQLite tek sunucuda hızlı ve yedeklemesi kolay; yoğun sipariş anlarında PostgreSQL'e geçmek gerekecek.</li>
+          <li data-i18n="l2">Rate limit sayaçları bellekte; sunucu kümesi kurulursa Redis'e taşınmalı.</li>
+          <li data-i18n="l3">Form isteklerinde CSRF token yok; SameSite=Lax çerezine ve Origin kontrolüne dayanıyor.</li>
+          <li data-i18n="l4">Kod arama 5 saniyede bir polling; IMAP IDLE ile anlık hale getirilebilir.</li>
+          <li data-i18n="l5">CI/CD yok; dağıtım sunucuda elle derlenerek yapılıyor.</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="tech">
       <h3 data-i18n="t_t">Nasıl çalışıyor</h3>
       <ol class="flow" aria-label="Akış">
         <li data-i18n="fl1">İstek</li>
         <li data-i18n="fl2">Express API</li>
-        <li data-i18n="fl3">Redis kuyruğu</li>
+        <li data-i18n="fl3">BullMQ kuyruğu (Redis)</li>
         <li data-i18n="fl4">Worker</li>
         <li data-i18n="fl5">E-posta (IMAP) ve Microsoft OAuth</li>
       </ol>
       <dl class="spec">
-        <div><dt data-i18n="sp1_t">Yığın</dt><dd>Node.js, TypeScript, Express, Prisma ORM, Redis</dd></div>
+        <div><dt data-i18n="sp1_t">Yığın</dt><dd>Node.js, TypeScript, Express, EJS, Prisma (SQLite), BullMQ, Redis, ImapFlow, Zod, Pino</dd></div>
         <div><dt data-i18n="sp2_t">Çok mağazalı yapı</dt><dd data-i18n="sp2_d">Davet kodlu kayıt, abonelik durumuna bağlı erişim, mağaza başına yönetim paneli</dd></div>
-        <div><dt data-i18n="sp3_t">Güvenlik</dt><dd data-i18n="sp3_d">bcrypt ile parola saklama, JWT oturumları, rate limiting, yönetici 2FA</dd></div>
-        <div><dt data-i18n="sp4_t">Test</dt><dd data-i18n="sp4_d">Playwright ile uçtan uca testler</dd></div>
-        <div><dt data-i18n="sp5_t">Arayüz</dt><dd data-i18n="sp5_d">Türkçe ve İngilizce, herkese açık durum sayfası</dd></div>
+        <div><dt data-i18n="sp3_t">Güvenlik</dt><dd data-i18n="sp3_d">AES-256-GCM ile şifreli alanlar, bcrypt, JWT oturumları, rate limiting, yönetici 2FA, IMAP için SSRF koruması</dd></div>
+        <div><dt data-i18n="sp4_t">Dayanıklılık</dt><dd data-i18n="sp4_d">Tekrar deneme ve geri çekilme, 5 hatada posta kutusunu 1 saat dinlendiren devre kesici, worker kalp atışı</dd></div>
+        <div><dt data-i18n="sp5_t">Arayüz</dt><dd data-i18n="sp5_d">Türkçe ve İngilizce, koyu ve açık tema, herkese açık durum sayfası</dd></div>
       </dl>
     </div>
   </div>
@@ -235,5 +278,6 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script src="demos.js"></script>
 </body>
 </html>

@@ -36,6 +36,27 @@
     h_skills:'Skills',k1_t:'Backend',k2_t:'Databases',k4_t:'Other',k4c:'Image processing (basic)',k4d:'English (B1)',
     h_contact:'Contact',c_loc:'Istanbul',c_note:'References available on request.'
   };
+
+  Object.assign(EN,{
+    d_h:'Try it: paste the key, get the code',d_note:'This is a simulation: the steps match the real flow, the data is fake.',
+    cust_label:'Customer screen',trace_label:'Server log',
+    u_h:'What\u2019s underneath',u_p:'You can try the three parts that keep this flow safe right here.',
+    sc1_t:'Keys must not be guessable',sc1_p:'Keys are generated with 96 bits of randomness, but bots can still try. One IP can try at most 5 different keys in 10 minutes, and the same key has its own separate limit.',
+    sc2_t:'When two jobs arrive at once',sc2_p:'Microsoft rotates the refresh token on every refresh. If two jobs go out with the old token at the same time, the second one is rejected and the account connection breaks. The worker shares the refresh in flight for the same account as a single promise.',
+    sc3_t:'Forgetting a filter must be impossible',sc3_p:'Instead of writing the store_id condition by hand in every query, a Prisma Client Extension adds it automatically. One store can\u2019t see another store\u2019s data.',
+    w1_label:'Attacker simulator',w2_label:'Token refresh race',w3_label:'Store isolation',
+    n_h:'By the numbers',n1_k:'TypeScript',n1_v:'40,520 lines, 202 files',n2_k:'UI templates',n2_v:'22,228 lines, 56 files (EJS)',n3_k:'API',n3_v:'205 endpoints, 17 route files',n4_k:'Data',n4_v:'17 models, 15 migrations',n5_k:'Tests',n5_v:'301 Playwright E2E scenarios, 49 files',n6_k:'History',n6_v:'161 commits, 96 days, solo developer',
+    l_h:'What I haven\u2019t done yet',
+    l1:'SQLite is fast and easy to back up on a single server; busy order periods will call for PostgreSQL.',
+    l2:'Rate-limit counters live in memory; they should move to Redis if the server becomes a cluster.',
+    l3:'Form requests have no CSRF token; they rely on SameSite=Lax cookies and Origin checks.',
+    l4:'Code lookup polls every 5 seconds; IMAP IDLE could make it instant.',
+    l5:'No CI/CD; deployment is a manual build on the server.',
+    fl3:'BullMQ queue (Redis)',
+    sp3_d:'AES-256-GCM encrypted fields, bcrypt, JWT sessions, rate limiting, admin 2FA, SSRF protection for IMAP',
+    sp4_t:'Resilience',sp4_d:'Retries with backoff, a circuit breaker that rests a mailbox for 1 hour after 5 failures, worker heartbeat',
+    sp5_d:'Turkish and English, dark and light themes, public status page'
+  });
   var TR={},nodes=[].slice.call(document.querySelectorAll('[data-i18n]')),alts=[].slice.call(document.querySelectorAll('[data-i18n-alt]'));
   nodes.forEach(function(n){TR[n.getAttribute('data-i18n')]=n.innerHTML});
   alts.forEach(function(n){TR[n.getAttribute('data-i18n-alt')]=n.getAttribute('alt')});
@@ -48,22 +69,11 @@
     root.lang=l;document.title=TITLE[l];lang.setAttribute('data-active',l);
     btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-lang')===l))});
     try{localStorage.setItem('lang',l)}catch(e){}
+    document.dispatchEvent(new Event('langchange'));
   }
   btns.forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-lang'))})});
   var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
   if(!saved&&/^en/i.test(navigator.language||'')&&!/^tr/i.test(navigator.language))saved='en';
   if(saved==='en')apply('en');
 
-  // ---- project story: the stage follows the step in view
-  var steps=[].slice.call(document.querySelectorAll('.step')),shots=[].slice.call(document.querySelectorAll('.shot'));
-  function show(i){
-    steps.forEach(function(s,k){s.classList.toggle('is-active',k===i)});
-    shots.forEach(function(s,k){s.classList.toggle('is-active',k===i);s.classList.toggle('is-past',k<i)});
-  }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){if(e.isIntersecting)show(+e.target.getAttribute('data-i'))});
-    },{rootMargin:'-45% 0px -45% 0px'});
-    steps.forEach(function(s){io.observe(s)});
-  }
 })();
