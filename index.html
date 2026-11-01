@@ -8,6 +8,13 @@
 <meta property="og:title" content="Mehmed Emin Kurt – Yazılım geliştirme">
 <meta property="og:description" content="Tekrar eden işleri otomatikleştiren yazılımlar. Canlıda çalışan proje: OtoGuard.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://mehmedeminkurt.github.io/">
+<meta property="og:image" content="https://mehmedeminkurt.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mehmedeminkurt.github.io/assets/og.png">
+
 <meta name="theme-color" content="#e9ecef">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="fonts.css">
@@ -32,6 +39,7 @@
 
 <main id="icerik">
 <section class="hero" id="ust">
+  <img class="hero-avatar" src="assets/profil-ai.webp" width="240" height="240" alt="Mehmed Emin Kurt, illüstrasyon" fetchpriority="high">
   <h1 aria-label="Mehmed Emin Kurt">
     <span class="line" aria-hidden="true"><span>Mehmed</span></span>
     <span class="line" aria-hidden="true"><span>Emin Kurt</span></span>
@@ -78,12 +86,15 @@
       </div>
     </div>
 
-    <div class="under">
-      <h3 data-i18n="u_h">Altında neler var</h3>
-      <p data-i18n="u_p">Bu akışı sağlam tutan üç parçayı da burada deneyebilirsin.</p>
-    </div>
+    
 
-    <div class="scene">
+    <div class="sims" id="sims">
+      <div class="sim-tabs" role="tablist" aria-label="Simülasyonlar" data-i18n-alabel="sim_a">
+        <button class="sim-tab" role="tab" type="button" aria-selected="true" data-sim="0" data-i18n="tb1">Anahtar sınırı</button>
+        <button class="sim-tab" role="tab" type="button" aria-selected="false" data-sim="1" data-i18n="tb2">Token yarışı</button>
+        <button class="sim-tab" role="tab" type="button" aria-selected="false" data-sim="2" data-i18n="tb3">Mağaza izolasyonu</button>
+      </div>
+      <div class="scene sim" data-sim="0">
       <div class="scene-text">
         <h4 data-i18n="sc1_t">Anahtarlar tahmin edilemesin</h4>
         <p data-i18n="sc1_p">Anahtarlar 96 bit rastgelelikte üretiliyor, ama botlar yine de deneyebilir. Tek bir IP 10 dakikada en fazla 5 farklı anahtar deneyebilir; aynı anahtarın da ayrı bir sınırı var.</p>
@@ -91,8 +102,7 @@
       </div>
       <div class="win widget" id="w-limit"><div class="win-bar"><span data-i18n="w1_label">Saldırgan simülatörü</span></div><div class="w-body"></div></div>
     </div>
-
-    <div class="scene">
+      <div class="scene sim" data-sim="1" hidden>
       <div class="scene-text">
         <h4 data-i18n="sc2_t">İki iş aynı anda gelirse</h4>
         <p data-i18n="sc2_p">Microsoft her yenilemede refresh token'ı değiştirir. İki iş eski token'la aynı anda giderse ikincisi reddedilir ve hesabın bağlantısı bozulur. Worker, aynı hesap için süren yenilemeyi tek bir promise olarak paylaştırıyor.</p>
@@ -100,8 +110,7 @@
       </div>
       <div class="win widget" id="w-race"><div class="win-bar"><span data-i18n="w2_label">Token yenileme yarışı</span></div><div class="w-body"></div></div>
     </div>
-
-    <div class="scene">
+      <div class="scene sim" data-sim="2" hidden>
       <div class="scene-text">
         <h4 data-i18n="sc3_t">Filtreyi unutmak mümkün olmasın</h4>
         <p data-i18n="sc3_p">Her sorguya store_id koşulunu elle yazmak yerine Prisma Client Extension bunu otomatik ekliyor. Bir mağaza diğerinin verisini göremiyor.</p>
@@ -109,14 +118,13 @@
       </div>
       <div class="win widget" id="w-tenant"><div class="win-bar"><span data-i18n="w3_label">Mağaza izolasyonu</span></div><div class="w-body"></div></div>
     </div>
-
-    <div class="owner">
-      <div class="owner-text">
-        <h3 data-i18n="o_t">Mağaza sahibi tarafı</h3>
-        <p data-i18n="o_d">Her mağazanın kendi paneli var: abonelik süresi, ürün limiti, key ve müşteri sayıları tek bakışta. Platformlar, paketler, keyler, müşteriler ve loglar ayrı sayfalarda yönetilir.</p>
-      </div>
-      <figure class="frame"><img src="assets/panel.webp" width="1245" height="484" loading="lazy" alt="Mağaza yönetim paneli: abonelik süresi, ürün limiti, key ve müşteri sayıları" data-i18n-alt="o_a"></figure>
     </div>
+
+    
+
+    
+
+    
 
     <div class="facts2">
       <div class="ledger">
@@ -142,23 +150,12 @@
       </div>
     </div>
 
-    <div class="tech">
-      <h3 data-i18n="t_t">Nasıl çalışıyor</h3>
-      <ol class="flow" aria-label="Akış">
-        <li data-i18n="fl1">İstek</li>
-        <li data-i18n="fl2">Express API</li>
-        <li data-i18n="fl3">BullMQ kuyruğu (Redis)</li>
-        <li data-i18n="fl4">Worker</li>
-        <li data-i18n="fl5">E-posta (IMAP) ve Microsoft OAuth</li>
-      </ol>
-      <dl class="spec">
+    <div class="tech"><h3 data-i18n="sp_h">Yığın ve güvenlik</h3><dl class="spec">
         <div><dt data-i18n="sp1_t">Yığın</dt><dd>Node.js, TypeScript, Express, EJS, Prisma (SQLite), BullMQ, Redis, ImapFlow, Zod, Pino</dd></div>
         <div><dt data-i18n="sp2_t">Çok mağazalı yapı</dt><dd data-i18n="sp2_d">Davet kodlu kayıt, abonelik durumuna bağlı erişim, mağaza başına yönetim paneli</dd></div>
         <div><dt data-i18n="sp3_t">Güvenlik</dt><dd data-i18n="sp3_d">AES-256-GCM ile şifreli alanlar, bcrypt, JWT oturumları, rate limiting, yönetici 2FA, IMAP için SSRF koruması</dd></div>
         <div><dt data-i18n="sp4_t">Dayanıklılık</dt><dd data-i18n="sp4_d">Tekrar deneme ve geri çekilme, 5 hatada posta kutusunu 1 saat dinlendiren devre kesici, worker kalp atışı</dd></div>
-        <div><dt data-i18n="sp5_t">Arayüz</dt><dd data-i18n="sp5_d">Türkçe ve İngilizce, koyu ve açık tema, herkese açık durum sayfası</dd></div>
-      </dl>
-    </div>
+      </dl></div>
   </div>
 </section>
 

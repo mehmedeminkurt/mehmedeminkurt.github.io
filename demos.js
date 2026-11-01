@@ -224,6 +224,22 @@
     draw(); document.addEventListener('langchange',draw);
   }
 
-  function boot(){delivery();limiter();race();tenant()}
+
+  /* ---------- simulation tabs ---------- */
+  function sims(){
+    var tabs=[].slice.call(document.querySelectorAll('.sim-tab')),panes=[].slice.call(document.querySelectorAll('.sim'));
+    if(!tabs.length) return;
+    function show(i){tabs.forEach(function(t,k){t.setAttribute('aria-selected',String(k===i));t.tabIndex=k===i?0:-1});panes.forEach(function(p,k){p.hidden=k!==i})}
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){show(i)});
+      t.addEventListener('keydown',function(e){
+        var n=e.key==='ArrowRight'?(i+1)%tabs.length:e.key==='ArrowLeft'?(i+tabs.length-1)%tabs.length:-1;
+        if(n>=0){e.preventDefault();show(n);tabs[n].focus()}
+      });
+    });
+    show(0);
+  }
+
+  function boot(){delivery();limiter();race();tenant();sims()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();

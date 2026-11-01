@@ -57,6 +57,8 @@
     sp4_t:'Resilience',sp4_d:'Retries with backoff, a circuit breaker that rests a mailbox for 1 hour after 5 failures, worker heartbeat',
     sp5_d:'Turkish and English, dark and light themes, public status page'
   });
+
+  Object.assign(EN,{tb1:'Key limit',tb2:'Token race',tb3:'Store isolation',sp_h:'Stack and security'});
   var TR={},nodes=[].slice.call(document.querySelectorAll('[data-i18n]')),alts=[].slice.call(document.querySelectorAll('[data-i18n-alt]'));
   nodes.forEach(function(n){TR[n.getAttribute('data-i18n')]=n.innerHTML});
   alts.forEach(function(n){TR[n.getAttribute('data-i18n-alt')]=n.getAttribute('alt')});

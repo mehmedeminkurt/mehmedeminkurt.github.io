@@ -303,3 +303,24 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(3.6rem,13vw,11.5re
   .tl-item:not(:last-child)::after{left:22.5px;top:52px}
   .tl-item{column-gap:18px;row-gap:6px}
 }
+
+
+/* hero avatar: sağ üstte, isimle aynı hizada */
+.hero{position:relative}
+.hero-avatar{position:absolute;right:var(--pad);top:clamp(20px,3.4vw,52px);width:clamp(150px,17vw,240px);height:clamp(150px,17vw,240px);border-radius:50%;object-fit:cover;opacity:0;transform:scale(.96)}
+.is-ready .hero-avatar{opacity:1;transform:none;transition:opacity .9s .25s var(--ease),transform .9s .25s var(--ease)}
+@media (max-width:900px){
+  .hero-avatar{position:static;display:block;width:96px;height:96px;margin-bottom:20px}
+}
+@media (prefers-reduced-motion:reduce){.hero-avatar{opacity:1;transform:none}}
+
+/* ---------- simulation tabs ---------- */
+.sims{margin-top:clamp(56px,8vw,100px)}
+.sim-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.sim-tab{background:none;border:1px solid #2a323c;color:#c9d0d8;border-radius:999px;padding:9px 18px;font:500 .95rem var(--display);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.sim-tab:hover{border-color:#5a6572}
+.sim-tab[aria-selected="true"]{background:#e6e9ed;color:var(--ink);border-color:#e6e9ed}
+.sims .scene{margin-top:clamp(28px,4vw,44px)}
+.sims .scene[hidden]{display:none}
+.tech{margin-top:clamp(56px,8vw,100px)}
+.tech h3{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:20px}
