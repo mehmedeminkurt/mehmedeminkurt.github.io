@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /assets/Mehmed-Emin-Kurt-CV.pdf
+
+Sitemap: https://mehmedeminkurt.github.io/sitemap.xml

@@ -62,7 +62,7 @@
   var TR={},nodes=[].slice.call(document.querySelectorAll('[data-i18n]')),alts=[].slice.call(document.querySelectorAll('[data-i18n-alt]'));
   nodes.forEach(function(n){TR[n.getAttribute('data-i18n')]=n.innerHTML});
   alts.forEach(function(n){TR[n.getAttribute('data-i18n-alt')]=n.getAttribute('alt')});
-  var TITLE={tr:'Mehmed Emin Kurt \u2013 Yazılım geliştirme',en:'Mehmed Emin Kurt \u2013 Software development'};
+  var TITLE={tr:'Mehmed Emin Kurt | Backend geliştirme: Node.js, TypeScript',en:'Mehmed Emin Kurt | Backend development: Node.js, TypeScript'};
   var lang=document.querySelector('.lang'),btns=[].slice.call(lang.querySelectorAll('button'));
   function apply(l){
     var d=l==='en'?EN:TR;
