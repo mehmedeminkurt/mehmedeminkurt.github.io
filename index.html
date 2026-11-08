@@ -28,6 +28,8 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://mehmedeminkurt.github.io/#kisi", "name": "Mehmed Emin Kurt", "url": "https://mehmedeminkurt.github.io/", "image": "https://mehmedeminkurt.github.io/assets/profil-ai.webp", "jobTitle": "Bilgisayar Programcılığı öğrencisi", "description": "Tekrar eden işleri otomatikleştiren yazılımlar geliştiriyor. Node.js ve TypeScript ile yazdığı OtoGuard teslimat platformu canlıda çalışıyor.", "address": {"@type": "PostalAddress", "addressLocality": "İstanbul", "addressCountry": "TR"}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "İstanbul Üniversitesi-Cerrahpaşa"}, "knowsAbout": ["Node.js", "TypeScript", "Python", "Express", "Prisma", "Redis", "REST API", "ESP32", "MQTT", "Node-RED"], "sameAs": ["https://github.com/mehmedeminkurt", "https://www.linkedin.com/in/mehmedeminkurt/"]}, {"@type": "WebSite", "@id": "https://mehmedeminkurt.github.io/#site", "url": "https://mehmedeminkurt.github.io/", "name": "Mehmed Emin Kurt", "inLanguage": ["tr", "en"], "publisher": {"@id": "https://mehmedeminkurt.github.io/#kisi"}}]}</script>
 <link rel="preload" href="fonts/familjen-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts.css?v=9" as="style">
+<link rel="preload" href="style.css?v=9" as="style">
 <link rel="stylesheet" href="fonts.css?v=9">
 <link rel="stylesheet" href="style.css?v=9">
 </head>
@@ -35,7 +37,7 @@
 <a class="skip" href="#icerik" data-i18n="skip">İçeriğe geç</a>
 
 <header class="top">
-  <a class="mark" href="#ust" aria-label="Mehmed Emin Kurt">MEK</a>
+  <a class="mark" href="#ust" aria-label="MEK – Mehmed Emin Kurt">MEK</a>
   <nav aria-label="Ana menü">
     <a href="#proje" data-i18n="nav_project">Proje</a>
     <a href="#deneyim" data-i18n="nav_exp">Deneyim</a>
@@ -146,7 +148,7 @@
           <div><dt data-i18n="n3_k">API</dt><dd data-i18n="n3_v">205 endpoint, 17 rota dosyası</dd></div>
           <div><dt data-i18n="n4_k">Veri</dt><dd data-i18n="n4_v">17 model, 15 migration</dd></div>
           <div><dt data-i18n="n5_k">Test</dt><dd data-i18n="n5_v">301 Playwright E2E senaryosu, 49 dosya</dd></div>
-          <div><dt data-i18n="n6_k">Geçmiş</dt><dd data-i18n="n6_v">161 commit, 96 gün, tek geliştirici</dd></div>
+          <div><dt data-i18n="n6_k">Geçmiş</dt><dd data-i18n="n6_v">169 commit, 108 gün, tek geliştirici</dd></div>
         </dl>
       </div>
       <div class="limits">
@@ -167,6 +169,14 @@
         <div><dt data-i18n="sp3_t">Güvenlik</dt><dd data-i18n="sp3_d">AES-256-GCM ile şifreli alanlar, bcrypt, JWT oturumları, rate limiting, yönetici 2FA, IMAP için SSRF koruması</dd></div>
         <div><dt data-i18n="sp4_t">Dayanıklılık</dt><dd data-i18n="sp4_d">Tekrar deneme ve geri çekilme, 5 hatada posta kutusunu 1 saat dinlendiren devre kesici, worker kalp atışı</dd></div>
       </dl></div>
+
+    <div class="project-head" style="margin-top:clamp(48px,6vw,84px);padding-top:clamp(40px,5vw,64px);border-top:1px solid #232a33">
+      <h2>Social Media<br>Scheduler</h2>
+      <div>
+        <p class="lead" data-i18n="p2_lead">Çok kiracılı (multi-tenant), rol tabanlı erişim kontrollü ve otomatik Brand Kit motoruna sahip sosyal medya zamanlama platformu. Instagram ve LinkedIn için kuyruk tabanlı (Postgres SKIP LOCKED) arka plan yayını ve Claude ile yapay zekâ içerik desteği sunar.</p>
+        <p class="note"><a href="https://github.com/mehmedeminkurt/social-media-scheduler" rel="noopener" target="_blank" data-i18n="p2_open">GitHub'da incele</a> <span data-i18n="p2_public">Açık kaynak kodlu monorepo deposu (Next.js, TypeScript, Prisma, PostgreSQL).</span></p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -180,7 +190,7 @@
         <div class="tl-body">
           <h3><a href="https://iwwomi.com/tr/" rel="noopener">IWWOMI</a></h3>
           <p class="role" data-i18n="e1_r">Yazılım Stajyeri (Üniversite Stajı)</p>
-          <ul><li data-i18n="e1_g">Benim fikrimden doğan çok kiracılı (multi-tenant) bir SaaS platformunun yetkilendirme ve rol tabanlı erişim modüllerini ekiple geliştirdim.</li><li data-i18n="e1_2">Açılan issue'ları çözerek ve gelen PR'ları uygulayarak platformun API entegrasyonu ve sistem kararlılığı süreçlerine katkı sağladım.</li><li data-i18n="e1_3">Ekip liderinin belirlediği fazlar ve görev planlarıyla, Git tabanlı bir iş akışında (issue tracking, PR review) çalışmayı öğrendim ve uyguladım.</li></ul>
+          <ul><li data-i18n="e1_g">Çok kiracılı bir sosyal medya zamanlama platformunda (Next.js, TypeScript, Prisma, PostgreSQL) şirket/üyelik veri modelini ve OWNER/ADMIN/MEMBER rol tabanlı erişim kontrolünü geliştirdim.</li><li data-i18n="e1_2">Instagram Graph API ve LinkedIn API yayın adaptörlerini, CSRF korumalı OAuth bağlantı katmanını ve AES-256-GCM token şifrelemesini yazdım; zamanlayıcıyı PostgreSQL FOR UPDATE SKIP LOCKED kuyruğuyla ayrı bir worker sürecinde çalıştırdım.</li><li data-i18n="e1_3">Faz planı ve issue takibiyle çalıştım: 22 issue kapattım, 38 commit attım; ekip liderinin 4 PR'ını review edip merge ettim.</li></ul>
         </div>
       </li>
       <li class="tl-item edu">
@@ -196,6 +206,7 @@
         <p class="tl-date" data-i18n="e2_w">Eylül 2024 – Haziran 2025</p>
         <span class="node"><svg class="nic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /></svg></span>
         <div class="tl-body">
+          <!-- NOT: https://www.ddmturkiye.org/ adresi 401 Basic Auth dönebilir; tarayıcıda kontrol edilecek -->
           <h3><a href="https://www.ddmturkiye.org/" rel="noopener">İHKİB Dijital Dönüşüm Merkezi</a></h3>
           <p class="role" data-i18n="e2_r">Yazılım Stajyeri (Lise Stajı)</p>
           <ul><li data-i18n="e2_1">Eğitimlere katılan yüzlerce kişiye tek tek sertifika göndermek yerine, isimlere özel sertifika oluşturan ve otomatik e-posta gönderen bir program geliştirdim; manuel iş yükü önemli ölçüde azaldı.</li><li data-i18n="e2_2">Node-RED ile barkod tabanlı bir üretim takip sistemi geliştirdim; ürünlerin depo ve üretim durumu gerçek zamanlı izlenebildi.</li><li data-i18n="e2_3">ESP32 ve sensör entegrasyonuyla, üretim hattındaki ürün sayısını otomatik izleyen bir prototip veri toplama sistemi tasarladım ve uyguladım.</li><li data-i18n="e2_4">Mevcut kodları düzenleme, hata ayıklama ve ihtiyaçlara göre geliştirme süreçlerinde aktif görev aldım.</li></ul>
