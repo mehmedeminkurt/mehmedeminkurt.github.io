@@ -35,7 +35,7 @@
     h_edu:'Education',d1_w:'2025 \u2013 ongoing',d1_t:'Istanbul University-Cerrahpaşa',d1_r:'Computer Programming (Associate degree), GPA 3.86 / 4.00',
     d2_t:'Arnavutköy Vocational and Technical Anatolian High School',d2_r:'Information Technologies, Software Development. Graduated first in the school, diploma grade 92.43',
     d2_e:'As a volunteer systems and hardware lead, I led the team that set up and maintained the school\u2019s computer lab.',
-    h_skills:'Skills',k1_t:'Backend',k2_t:'Databases',k4_t:'Other',k4c:'Image processing (basic)',k4d:'English (B1)',
+    h_skills:'Skills',k1_t:'Web & Server',k2_t:'Databases',k4_t:'Other',k4c:'Image processing (basic)',k4d:'English (B1)',
     h_contact:'Contact',c_loc:'Istanbul',c_note:'References available on request.'
   };
 
