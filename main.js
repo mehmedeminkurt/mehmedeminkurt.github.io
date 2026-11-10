@@ -11,6 +11,7 @@
     f2_t:'Technologies',f3_t:'Live',
     cta_project:'See OtoGuard',cta_cv:'Download CV (PDF)',
     p_lead:'Key-based delivery automation for stores that sell digital products. The buyer pastes the key that came with the order; the system validates it and delivers the details and a one-time verification code within seconds.',
+    p_story:'Before OtoGuard, I ran simple webhook-based license and stock delivery scripts in production myself; as the need grew, this multi-tenant platform replaced them.',
     p_open:'Open otoguard.tr',p_private:'The source is in a private repository; happy to walk through it on request.',
     p2_lead:'A multi-tenant social media scheduling platform with role-based access control (RBAC) and an automated Brand Kit image engine. Features queued background publishing (Postgres SKIP LOCKED) for Instagram and LinkedIn, alongside Claude AI content generation.',
     p2_open:'View on GitHub',p2_public:'Open-source monorepo repository (Next.js, TypeScript, Prisma, PostgreSQL).',
