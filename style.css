@@ -261,7 +261,8 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(3.6rem,13vw,11.5re
 .ledger dl{margin-top:16px;border-top:1px solid #2a323c}
 .ledger dl>div{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:12px;padding:12px 0;border-bottom:1px solid #2a323c}
 .ledger dt{color:#8b95a3;font-family:var(--display);font-weight:500;font-size:.95rem}
-.ledger dd{font-family:var(--display);font-weight:600;font-size:1.12rem;letter-spacing:-.01em}
+.ledger dd{font-family:var(--display);font-weight:600;font-size:1.12rem;letter-spacing:-.01em;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;min-width:0}
+html.js-stats:not(.stats-ready) .ledger dd{visibility:hidden}
 .limits ul{margin-top:16px}
 .limits li{position:relative;padding-left:1.1em;margin-top:10px;color:#b4bcc7;font-size:1.02rem;line-height:1.5}
 .limits li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:1px;background:#8b95a3}
