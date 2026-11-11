@@ -50,7 +50,7 @@
     sc2_t:'When two jobs arrive at once',sc2_p:'Microsoft rotates the refresh token on every refresh. If two jobs go out with the old token at the same time, the second one is rejected and the account connection breaks. The worker shares the refresh in flight for the same account as a single promise.',
     sc3_t:'Forgetting a filter must be impossible',sc3_p:'Instead of writing the store_id condition by hand in every query, a Prisma Client Extension adds it automatically. One store can\u2019t see another store\u2019s data.',
     w1_label:'Attacker simulator',w2_label:'Token refresh race',w3_label:'Store isolation',
-    n_h:'By the numbers',n1_k:'TypeScript (source & tests)',n1_v:'45,276 lines, 221 files',n2_k:'UI templates',n2_v:'22,658 lines, 57 files (EJS)',n3_k:'API',n3_v:'208 endpoints, 17 route files',n4_k:'Data',n4_v:'17 models, 18 migrations',n5_k:'Tests',n5_v:'395 Playwright E2E scenarios, 61 files',n6_k:'History',n6_v:'179 commits, 110 days, solo developer',
+    n_h:'By the numbers',n1_k:'TypeScript (source & tests)',n1_v:'39,380 lines, 194 files',n2_k:'UI templates',n2_v:'22,658 lines, 57 files (EJS)',n3_k:'API',n3_v:'208 endpoints, 17 route files',n4_k:'Data',n4_v:'17 models, 18 migrations',n5_k:'Tests',n5_v:'395 Playwright E2E scenarios, 61 files',n6_k:'History',n6_v:'182 commits, 110 days, solo developer',
     l_h:'What I haven\u2019t done yet',
     l1:'SQLite is fast and easy to back up on a single server; busy order periods will call for PostgreSQL.',
     l2:'Rate-limit counters live in memory; they should move to Redis if the server becomes a cluster.',
@@ -85,8 +85,8 @@
 
   // ---- dynamic stats & count-up animation
   var FALLBACK_STATS = {
-    tsLines: 45276,
-    tsFiles: 221,
+    tsLines: 39380,
+    tsFiles: 194,
     ejsLines: 22658,
     ejsFiles: 57,
     endpoints: 208,
@@ -95,7 +95,7 @@
     migrations: 18,
     e2eTests: 395,
     e2eFiles: 61,
-    commits: 179,
+    commits: 182,
     days: 110
   };
 
@@ -115,7 +115,7 @@
 
   function getRowText(rowId, vals, l){
     if(rowId === 'n1_v'){
-      var f = formatNum(vals.tsFiles != null ? vals.tsFiles : 221, l);
+      var f = formatNum(vals.tsFiles != null ? vals.tsFiles : 194, l);
       return l === 'en'
         ? formatNum(vals.tsLines, l) + ' lines, ' + f + ' files'
         : formatNum(vals.tsLines, l) + ' sat\u0131r, ' + f + ' dosya';
