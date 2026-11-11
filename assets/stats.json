@@ -1,15 +1,15 @@
 {
-  "updated": "2026-11-11T00:00:00.000Z",
-  "commits": 169,
-  "days": 108,
-  "tsLines": 40520,
-  "tsFiles": 202,
-  "ejsLines": 22228,
-  "ejsFiles": 56,
-  "endpoints": 205,
+  "updated": "2026-11-11T07:57:17.823Z",
+  "commits": 178,
+  "days": 110,
+  "tsLines": 45276,
+  "tsFiles": 221,
+  "ejsLines": 22658,
+  "ejsFiles": 57,
+  "endpoints": 208,
   "routeFiles": 17,
   "models": 17,
-  "migrations": 15,
-  "e2eTests": 301,
-  "e2eFiles": 49
+  "migrations": 18,
+  "e2eTests": 395,
+  "e2eFiles": 61
 }
