@@ -48,7 +48,7 @@
     sc2_t:'When two jobs arrive at once',sc2_p:'Microsoft rotates the refresh token on every refresh. If two jobs go out with the old token at the same time, the second one is rejected and the account connection breaks. The worker shares the refresh in flight for the same account as a single promise.',
     sc3_t:'Forgetting a filter must be impossible',sc3_p:'Instead of writing the store_id condition by hand in every query, a Prisma Client Extension adds it automatically. One store can\u2019t see another store\u2019s data.',
     w1_label:'Attacker simulator',w2_label:'Token refresh race',w3_label:'Store isolation',
-    n_h:'By the numbers',n1_k:'TypeScript',n1_v:'40,520 lines, 202 files',n2_k:'UI templates',n2_v:'22,228 lines, 56 files (EJS)',n3_k:'API',n3_v:'205 endpoints, 17 route files',n4_k:'Data',n4_v:'17 models, 15 migrations',n5_k:'Tests',n5_v:'301 Playwright E2E scenarios, 49 files',n6_k:'History',n6_v:'169 commits, 108 days, solo developer',
+    n_h:'By the numbers',n1_k:'TypeScript (source & tests)',n1_v:'45,276 lines, 221 files',n2_k:'UI templates',n2_v:'22,658 lines, 57 files (EJS)',n3_k:'API',n3_v:'208 endpoints, 17 route files',n4_k:'Data',n4_v:'17 models, 18 migrations',n5_k:'Tests',n5_v:'395 Playwright E2E scenarios, 61 files',n6_k:'History',n6_v:'179 commits, 110 days, solo developer',
     l_h:'What I haven\u2019t done yet',
     l1:'SQLite is fast and easy to back up on a single server; busy order periods will call for PostgreSQL.',
     l2:'Rate-limit counters live in memory; they should move to Redis if the server becomes a cluster.',
@@ -80,5 +80,62 @@
   var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
   if(!saved&&/^en/i.test(navigator.language||'')&&!/^tr/i.test(navigator.language))saved='en';
   if(saved==='en')apply('en');
+
+  // ---- dynamic stats
+  function formatNum(n, l){
+    try{
+      return Number(n).toLocaleString(l==='en'?'en-US':'tr-TR');
+    }catch(e){
+      return String(n);
+    }
+  }
+
+  function updateStats(data){
+    if(!data)return;
+    if(data.tsLines!=null){
+      var f=data.tsFiles!=null?data.tsFiles:202;
+      TR['n1_v']=formatNum(data.tsLines,'tr')+' sat\u0131r, '+f+' dosya';
+      EN['n1_v']=formatNum(data.tsLines,'en')+' lines, '+f+' files';
+    }
+    if(data.ejsLines!=null){
+      var f=data.ejsFiles!=null?data.ejsFiles:56;
+      TR['n2_v']=formatNum(data.ejsLines,'tr')+' sat\u0131r, '+f+' dosya (EJS)';
+      EN['n2_v']=formatNum(data.ejsLines,'en')+' lines, '+f+' files (EJS)';
+    }
+    if(data.endpoints!=null){
+      var rf=data.routeFiles!=null?data.routeFiles:17;
+      TR['n3_v']=data.endpoints+' endpoint, '+rf+' rota dosyas\u0131';
+      EN['n3_v']=data.endpoints+' endpoints, '+rf+' route files';
+    }
+    if(data.models!=null){
+      var m=data.migrations!=null?data.migrations:15;
+      TR['n4_v']=data.models+' model, '+m+' migration';
+      EN['n4_v']=data.models+' models, '+m+' migrations';
+    }
+    if(data.e2eTests!=null){
+      var ef=data.e2eFiles!=null?data.e2eFiles:49;
+      TR['n5_v']=data.e2eTests+' Playwright E2E senaryosu, '+ef+' dosya';
+      EN['n5_v']=data.e2eTests+' Playwright E2E scenarios, '+ef+' files';
+    }
+    if(data.commits!=null&&data.days!=null){
+      TR['n6_v']=data.commits+' commit, '+data.days+' g\u00fcn, tek geli\u015ftirici';
+      EN['n6_v']=data.commits+' commits, '+data.days+' days, solo developer';
+    }
+    var currentLang=root.lang||'tr';
+    apply(currentLang);
+  }
+
+  fetch('assets/stats.json', { cache: 'no-cache' })
+    .then(function(r){
+      if(!r.ok)throw new Error('Failed to load stats');
+      return r.json();
+    })
+    .then(function(d){
+      updateStats(d);
+    })
+    .catch(function(){
+      // Dosya okunamadığında mevcut HTML sabit değerleri korunur
+    });
+
 
 })();

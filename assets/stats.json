@@ -1,0 +1,15 @@
+{
+  "updated": "2026-11-11T08:04:52.142Z",
+  "commits": 179,
+  "days": 110,
+  "tsLines": 45276,
+  "tsFiles": 221,
+  "ejsLines": 22658,
+  "ejsFiles": 57,
+  "endpoints": 208,
+  "routeFiles": 17,
+  "models": 17,
+  "migrations": 18,
+  "e2eTests": 395,
+  "e2eFiles": 61
+}
